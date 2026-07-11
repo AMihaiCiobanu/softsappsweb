@@ -349,7 +349,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
 }
 .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
 .footer-inner .brand svg { height: 30px; }
-.footer-meta { color: var(--text-faint); font-size: 0.9rem; text-align: right; }
+.footer-meta { color: var(--text-faint); font-size: 0.9rem; text-align: right; display: flex; flex-direction: column; gap: 5px; }
+.footer-meta a { color: var(--text-dim); }
+.footer-meta a:hover { color: var(--text); }
+.footer-legal { font-size: 0.8rem; color: var(--text-faint); margin-top: 4px; }
 
 /* ---------- reveal animation (JS-driven + fallback) ---------- */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
