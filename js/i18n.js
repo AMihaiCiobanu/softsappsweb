@@ -79,7 +79,7 @@
 
       // istetel page
       ist_back: "SoftApps",
-      ist_badge: "În dezvoltare · în curând",
+      ist_badge: "Live · App Store și Google Play",
       ist_title_html: "Istețel — <span class='grad'>învățare pentru copii</span>",
       ist_sub: "Engleză și matematică în stil Duolingo. Complet offline, fără conturi, fără reclame, fără urmărire.",
       ist_f1_title: "Complet offline",
@@ -90,7 +90,7 @@
       ist_f3_desc: "Instrucțiuni în limba copilului, răspunsuri în limba țintă.",
       ist_f4_title: "Sigur pentru copii",
       ist_f4_desc: "Fără conturi, fără reclame, fără colectare de date. Deloc.",
-      ist_soon: "Disponibil în curând pe App Store și Google Play.",
+      ist_soon: "Disponibil acum pe App Store și Google Play.",
       ist_privacy: "Politica de confidențialitate",
       ist_home: "← Înapoi la SoftApps",
     },
@@ -161,7 +161,7 @@
       footer_rights: "All rights reserved.",
 
       ist_back: "SoftApps",
-      ist_badge: "In development · coming soon",
+      ist_badge: "Live · App Store & Google Play",
       ist_title_html: "Istețel — <span class='grad'>learning for kids</span>",
       ist_sub: "English and Math, Duolingo-style. Fully offline, no accounts, no ads, no tracking.",
       ist_f1_title: "Fully offline",
@@ -172,7 +172,7 @@
       ist_f3_desc: "Instructions in the child's language, answers in the target language.",
       ist_f4_title: "Kid-safe",
       ist_f4_desc: "No accounts, no ads, no data collection. None at all.",
-      ist_soon: "Coming soon to the App Store and Google Play.",
+      ist_soon: "Available now on the App Store and Google Play.",
       ist_privacy: "Privacy policy",
       ist_home: "← Back to SoftApps",
     },
