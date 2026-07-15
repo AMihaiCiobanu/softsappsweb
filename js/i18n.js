@@ -26,7 +26,7 @@
 
       // about
       about_eyebrow: "Cine suntem",
-      about_title_html: "O firmă mică, produse pe care le <span class='grad'>folosește lumea</span>.",
+      about_title_html: "Studio de software, produse pe care le <span class='grad'>folosește lumea</span>.",
       about_p1: "SoftApps SRL construiește aplicații mobile native și pagini web de prezentare. Punem accent pe viteză, design curat și lucruri care funcționează chiar și offline.",
       about_p2: "Avem produse proprii în magazinele de aplicații și site-uri livrate pentru clienți reali — de la restaurante la studiouri de beauty.",
       stat_apps_n: "2",
@@ -268,7 +268,7 @@
       marquee: "iOS · Android · Flutter · Web · UI/UX · Cloudflare · Offline-first · App Store · Google Play ·",
 
       about_eyebrow: "Who we are",
-      about_title_html: "A small team, products <span class='grad'>people actually use</span>.",
+      about_title_html: "A software studio, products <span class='grad'>people actually use</span>.",
       about_p1: "SoftApps Ltd builds native mobile apps and presentation websites. We care about speed, clean design, and things that work even offline.",
       about_p2: "We ship our own products to the app stores and deliver websites for real clients — from restaurants to beauty studios.",
       stat_apps_n: "2",
