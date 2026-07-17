@@ -1,21 +1,33 @@
 /* SoftApps — motion & interactions.
    Degrades gracefully: if GSAP/Lenis fail to load, reveals still fire via
-   IntersectionObserver, and reduced-motion users get a static page. */
+   IntersectionObserver, and reduced-motion users get a static page.
+
+   The motion libraries (~120KB) are fetched at runtime and only where they
+   pay off: wide viewports without a reduced-motion preference. Everywhere
+   else the IntersectionObserver path below covers the reveals. */
 (function () {
   "use strict";
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const hasGSAP = typeof window.gsap !== "undefined";
-  const hasLenis = typeof window.Lenis !== "undefined";
   const isFine = window.matchMedia("(pointer: fine)").matches;
+  const isWide = window.matchMedia("(min-width: 900px)").matches;
+  const wantMotion = !reduce && isWide;
 
-  /* ---------- header shrink ---------- */
+  /* ---------- header shrink + scroll progress ---------- */
   const header = document.getElementById("header");
+  const progress = document.createElement("div");
+  progress.className = "scroll-progress";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.prepend(progress);
+
   const onScroll = () => {
     if (header) header.classList.toggle("scrolled", window.scrollY > 40);
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
 
   /* ---------- mobile menu ---------- */
   const menuToggle = document.getElementById("menuToggle");
@@ -123,21 +135,23 @@
     window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(start, 200); });
   }
 
-  /* ---------- smooth scroll (Lenis) ---------- */
-  let lenis = null;
-  if (hasLenis && !reduce) {
-    lenis = new window.Lenis({ duration: 1.1, smoothWheel: true });
-    if (hasGSAP && window.ScrollTrigger) {
-      lenis.on("scroll", window.ScrollTrigger.update);
-      window.gsap.ticker.add((t) => lenis.raf(t * 1000));
-      window.gsap.ticker.lagSmoothing(0);
-    } else {
-      const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
-      requestAnimationFrame(raf);
-    }
+  /* ---------- motion library loading ---------- */
+  // async=false keeps execution in insertion order, so ScrollTrigger always
+  // sees gsap. A failed fetch resolves anyway — the caller re-checks globals.
+  function loadScripts(srcs) {
+    return Promise.all(srcs.map((src) => new Promise((resolve) => {
+      const s = document.createElement("script");
+      s.src = src;
+      s.async = false;
+      s.onload = resolve;
+      s.onerror = resolve;
+      document.head.appendChild(s);
+    })));
   }
 
-  // anchor links -> smooth scroll via Lenis (fallback native)
+  let lenis = null;
+
+  // anchor links -> smooth scroll via Lenis once it exists, native until then
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href");
@@ -150,10 +164,59 @@
     });
   });
 
-  /* ---------- reveals + scroll choreography ---------- */
   const reveals = document.querySelectorAll(".reveal");
 
-  if (hasGSAP && window.ScrollTrigger && !reduce) {
+  function revealFallback() {
+    if (!("IntersectionObserver" in window) || reduce) {
+      reveals.forEach((el) => el.classList.add("in"));
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach((el) => io.observe(el));
+
+    // A jump — scroll restoration on reload, or a deep link to #contact — can
+    // carry an element from below the viewport to above it without it ever
+    // intersecting, so the observer never fires and it stays at opacity 0.
+    // Sweep anything already scrolled past, then stop once nothing is pending.
+    const sweep = () => {
+      let pending = 0;
+      reveals.forEach((el) => {
+        if (el.classList.contains("in")) return;
+        if (el.getBoundingClientRect().bottom < 0) {
+          el.classList.add("in");
+          io.unobserve(el);
+        } else {
+          pending++;
+        }
+      });
+      if (!pending) window.removeEventListener("scroll", sweep);
+    };
+    window.addEventListener("scroll", sweep, { passive: true });
+  }
+
+  function initMotion() {
+    const hasGSAP = typeof window.gsap !== "undefined" && window.ScrollTrigger;
+    const hasLenis = typeof window.Lenis !== "undefined";
+
+    if (hasLenis) {
+      lenis = new window.Lenis({ duration: 1.1, smoothWheel: true });
+      if (hasGSAP) {
+        lenis.on("scroll", window.ScrollTrigger.update);
+        window.gsap.ticker.add((t) => lenis.raf(t * 1000));
+        window.gsap.ticker.lagSmoothing(0);
+      } else {
+        const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+        requestAnimationFrame(raf);
+      }
+    }
+
+    if (!hasGSAP) { revealFallback(); return; }
+
     const { gsap } = window;
     gsap.registerPlugin(window.ScrollTrigger);
 
@@ -190,17 +253,17 @@
         scrollTrigger: { trigger: el, start: "top bottom", end: "top top", scrub: true },
       });
     });
+  }
+
+  // Nothing to reveal means nothing for the libs to drive (the 404 page), so
+  // don't pay for them.
+  if (wantMotion && reveals.length) {
+    loadScripts([
+      "/vendor/lenis.min.js",
+      "/vendor/gsap.min.js",
+      "/vendor/ScrollTrigger.min.js",
+    ]).then(initMotion);
   } else {
-    // Fallback: IntersectionObserver reveal
-    if ("IntersectionObserver" in window && !reduce) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((en) => {
-          if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-        });
-      }, { threshold: 0.15 });
-      reveals.forEach((el) => io.observe(el));
-    } else {
-      reveals.forEach((el) => el.classList.add("in"));
-    }
+    revealFallback();
   }
 })();

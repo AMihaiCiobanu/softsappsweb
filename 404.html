@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="nf_meta_title">Pagina nu există — SoftApps</title>
+  <meta name="description" data-i18n-content="nf_meta_desc" content="Pagina căutată nu există pe softsapps.com.">
+  <meta name="theme-color" content="#05070f">
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    .nf {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .nf-code {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(6rem, 22vw, 13rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .nf h1 {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      margin-bottom: 16px;
+    }
+
+    .nf p {
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      max-width: 44ch;
+      margin: 0 auto 34px;
+    }
+
+    .nf-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-mesh"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="cursor-glow" id="cursor"></div>
+
+  <header class="site-header" id="header">
+    <a class="brand" href="/" aria-label="SoftApps">
+      <svg viewBox="0 0 380 100" height="34" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#22d3ee" />
+            <stop offset=".5" stop-color="#7c3aed" />
+            <stop offset="1" stop-color="#ec4899" />
+          </linearGradient>
+        </defs>
+        <rect x="6" y="14" width="72" height="72" rx="20" fill="#0a0e1a" />
+        <rect x="6" y="14" width="72" height="72" rx="20" fill="none" stroke="url(#lg)" stroke-width="2.5" />
+        <path
+          d="M56 38 C56 31 49 29 42 29 C34 29 28 32 28 39 C28 47 37 49 42 51 C47 53 56 55 56 63 C56 70 48 72 42 72 C35 72 28 70 28 62"
+          fill="none" stroke="url(#lg)" stroke-width="8" stroke-linecap="round" />
+        <text x="96" y="62" font-family="'Space Grotesk',sans-serif" font-size="42" font-weight="700"
+          fill="#f4f7ff">Soft<tspan fill="url(#lg)">Apps</tspan></text>
+      </svg>
+    </a>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="ro" type="button">RO</button>
+        <button data-lang="en" type="button">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="nf">
+    <div class="wrap">
+      <div class="nf-code">404</div>
+      <h1 data-i18n-html="nf_title_html">Pagina asta nu <span class="grad">există</span>.</h1>
+      <p data-i18n="nf_sub">Poate a fost mutată, poate linkul e greșit. Hai înapoi la lucrurile care există.</p>
+      <div class="nf-actions">
+        <a class="btn btn-primary" href="/" data-i18n="nf_cta">Înapoi la pagina principală</a>
+        <a class="btn" href="/#work" data-i18n="nf_cta2">Vezi portofoliul</a>
+      </div>
+    </div>
+  </main>
+
+  <script defer src="/js/i18n.js"></script>
+  <script defer src="/js/main.js"></script>
+</body>
+
+</html>

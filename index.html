@@ -4,29 +4,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SoftApps — Aplicații native & experiențe web</title>
-  <meta name="description"
+  <title data-i18n="meta_title">SoftApps — Aplicații native & experiențe web</title>
+  <meta name="description" data-i18n-content="meta_desc"
     content="SoftApps SRL — studio de software din România. Construim aplicații mobile native pentru iOS și Android și site-uri web moderne.">
   <meta name="theme-color" content="#05070f">
 
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SoftApps">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:locale:alternate" content="en_GB">
   <meta property="og:title" content="SoftApps — Aplicații native & experiențe web">
   <meta property="og:description"
     content="Studio de software din România. Aplicații mobile native și site-uri moderne.">
   <meta property="og:url" content="https://softsapps.com/">
   <meta property="og:image" content="https://softsapps.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SoftApps — aplicații native și experiențe web">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://softsapps.com/">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
   <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://softsapps.com/#organization",
+    "name": "SOFTAPPS S.R.L.",
+    "alternateName": "SoftApps",
+    "url": "https://softsapps.com/",
+    "logo": "https://softsapps.com/assets/logo/softapps-logo.svg",
+    "image": "https://softsapps.com/assets/og-image.png",
+    "email": "contact@softsapps.com",
+    "description": "Studio de software din România. Construim aplicații mobile native pentru iOS și Android și site-uri web moderne.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "RO"
+    },
+    "identifier": [
+      { "@type": "PropertyValue", "name": "CUI", "value": "54463640" },
+      { "@type": "PropertyValue", "name": "Reg. Com.", "value": "J2026023970005" },
+      { "@type": "PropertyValue", "name": "D-U-N-S", "value": "303152744" }
+    ],
+    "knowsAbout": ["iOS", "Android", "Flutter", "Dezvoltare web", "UI/UX"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://softsapps.com/#website",
+    "url": "https://softsapps.com/",
+    "name": "SoftApps",
+    "inLanguage": ["ro", "en"],
+    "publisher": { "@id": "https://softsapps.com/#organization" }
+  }
+  </script>
 </head>
 
 <body>
@@ -200,7 +239,7 @@
 
         <!-- Popasul -->
         <a class="card tilt reveal" href="https://popasuldrumetuluibucovina.ro" target="_blank" rel="noopener">
-          <img class="card-thumb" src="/assets/portfolio/popasul-hero.png" alt="" aria-hidden="true" loading="lazy">
+          <img class="card-thumb" src="/assets/portfolio/popasul-hero.jpg" alt="" aria-hidden="true" loading="lazy">
           <div class="card-inner">
             <div class="card-badges">
               <span class="tag tag-client" data-i18n="badge_client">Client</span>
@@ -302,7 +341,6 @@
           & experiențe web.</p>
       </div>
       <div class="footer-meta">
-        <div><a href="/istetel/privacy-policy.html" data-i18n="ist_privacy">Politica de confidențialitate</a></div>
         <div><a href="mailto:contact@softsapps.com">contact@softsapps.com</a></div>
         <div class="footer-legal">SOFTAPPS S.R.L. · Reg. Com.: J2026023970005 · CUI: 54463640 · D-U-N-S: 303152744</div>
         <div>© 2026 SOFTAPPS S.R.L. <span data-i18n="footer_rights">Toate drepturile rezervate.</span></div>
@@ -310,11 +348,10 @@
     </div>
   </footer>
 
-  <script src="/vendor/lenis.min.js"></script>
-  <script src="/vendor/gsap.min.js"></script>
-  <script src="/vendor/ScrollTrigger.min.js"></script>
-  <script src="/js/i18n.js"></script>
-  <script src="/js/main.js"></script>
+  <!-- Motion libs (lenis/gsap/ScrollTrigger) are loaded from main.js, only on
+       wide viewports without a reduced-motion preference. -->
+  <script defer src="/js/i18n.js"></script>
+  <script defer src="/js/main.js"></script>
 </body>
 
 </html>

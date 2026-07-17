@@ -6,6 +6,20 @@
 
   const DICT = {
     ro: {
+      // document metadata (title + meta description)
+      meta_title: "SoftApps — Aplicații native & experiențe web",
+      meta_desc: "SoftApps SRL — studio de software din România. Construim aplicații mobile native pentru iOS și Android și site-uri web moderne.",
+      ist_meta_title: "Istețel — Engleză & Matematică pentru copii | SoftApps",
+      ist_meta_desc: "Istețel — aplicație educativă offline pentru copii. Engleză și matematică prin 284 de lecții scurte și 59 de tipuri de exerciții, cu lecții noi adăugate constant. Patru cursuri: română → engleză, engleză → română, doar română, doar engleză. Fără conturi, fără reclame, fără urmărire.",
+
+      // 404
+      nf_meta_title: "Pagina nu există — SoftApps",
+      nf_meta_desc: "Pagina căutată nu există pe softsapps.com.",
+      nf_title_html: "Pagina asta nu <span class='grad'>există</span>.",
+      nf_sub: "Poate a fost mutată, poate linkul e greșit. Hai înapoi la lucrurile care există.",
+      nf_cta: "Înapoi la pagina principală",
+      nf_cta2: "Vezi portofoliul",
+
       // nav
       nav_about: "Despre",
       nav_work: "Portofoliu",
@@ -252,6 +266,18 @@
     },
 
     en: {
+      meta_title: "SoftApps — Native apps & web experiences",
+      meta_desc: "SoftApps Ltd — software studio from Romania. We build native mobile apps for iOS and Android and modern websites.",
+      ist_meta_title: "Istețel — English & Math for kids | SoftApps",
+      ist_meta_desc: "Istețel — an offline educational app for kids. English and math through 284 short lessons and 59 exercise types, with new lessons added regularly. Four courses: Romanian → English, English → Romanian, Romanian only, English only. No accounts, no ads, no tracking.",
+
+      nf_meta_title: "Page not found — SoftApps",
+      nf_meta_desc: "The page you were looking for doesn't exist on softsapps.com.",
+      nf_title_html: "This page doesn't <span class='grad'>exist</span>.",
+      nf_sub: "It may have moved, or the link may be wrong. Let's get you back to something that's there.",
+      nf_cta: "Back to the homepage",
+      nf_cta2: "See our work",
+
       nav_about: "About",
       nav_work: "Work",
       nav_services: "Services",
@@ -514,6 +540,12 @@
     document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
       const key = el.getAttribute("data-i18n-aria");
       if (t[key] != null) el.setAttribute("aria-label", t[key]);
+    });
+    // <title> and <meta content="..."> — keeps the tab label and the search
+    // snippet in the same language as the page body.
+    document.querySelectorAll("[data-i18n-content]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-content");
+      if (t[key] != null) el.setAttribute("content", t[key]);
     });
 
     // reflect active state on lang buttons
