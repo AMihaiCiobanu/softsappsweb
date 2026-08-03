@@ -82,15 +82,21 @@
   const canvas = document.getElementById("hero-canvas");
   if (canvas && !reduce) {
     const ctx = canvas.getContext("2d");
-    let w, h, dots, raf;
-    const DPR = Math.min(window.devicePixelRatio || 1, 2);
+    let w = 0, h = 0, dots, raf;
     const COUNT = window.innerWidth < 640 ? 34 : 70;
     const COLORS = ["#22d3ee", "#7c3aed", "#ec4899"];
 
     function resize() {
-      w = canvas.clientWidth; h = canvas.clientHeight;
-      canvas.width = w * DPR; canvas.height = h * DPR;
-      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      // While the stylesheet is still pending the canvas is a plain in-flow box
+      // that takes its layout size *from* its backing store, so writing
+      // width/height grows the element, which re-triggers the observer. Clamping
+      // to the viewport makes that settle at a fixed point instead of doubling.
+      w = Math.min(rect.width, window.innerWidth);
+      h = Math.min(rect.height, window.innerHeight * 2);
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
     function make() {
       dots = Array.from({ length: COUNT }, () => ({
@@ -129,10 +135,35 @@
       ctx.globalAlpha = 1;
       raf = requestAnimationFrame(frame);
     }
-    const start = () => { resize(); make(); cancelAnimationFrame(raf); frame(); };
-    start();
+    // Never draw against a box the canvas doesn't actually have. On a cold load
+    // this deferred script can run before the stylesheet is applied, and an
+    // unstyled canvas measures its intrinsic 300x150 — the field then gets
+    // stretched ~6x by CSS and reads as a dense mesh of fat dots until a reload
+    // (warm CSS) makes the first measurement correct.
+    const start = () => {
+      resize();
+      if (w < 1 || h < 1) return; // no layout yet — the observer calls back
+      make(); cancelAnimationFrame(raf); frame();
+    };
+
     let rt;
-    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(start, 200); });
+    const restart = () => {
+      clearTimeout(rt);
+      rt = setTimeout(() => {
+        const rect = canvas.getBoundingClientRect();
+        // Sub-pixel jitter (font swap, scrollbar) isn't worth reshuffling for.
+        if (dots && Math.abs(rect.width - w) < 2 && Math.abs(rect.height - h) < 2) return;
+        start();
+      }, 200);
+    };
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(() => (dots ? restart() : start())).observe(canvas);
+    } else {
+      start();
+      window.addEventListener("resize", restart);
+      window.addEventListener("load", start);
+    }
   }
 
   /* ---------- motion library loading ---------- */
