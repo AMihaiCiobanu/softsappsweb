@@ -405,7 +405,8 @@ h3 {
 }
 .hero-scroll {
   position: absolute;
-  bottom: 30px;
+  /* clears the critter strip (96px) so the cue stays readable */
+  bottom: 106px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -850,6 +851,30 @@ h3 {
   color: var(--text);
 }
 
+/* ---------- critter strip ---------- */
+/* Full-bleed band along the bottom edge, visible from the first paint.
+   pointer-events stays off so the 96px strip never swallows a click meant for
+   the page — main.js hit-tests against window coordinates instead. The hero's
+   "Scroll" cue is lifted above the band so the two don't overlap. */
+#critters {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 96px;
+  z-index: 40; /* over content, under the mobile menu (49) */
+  pointer-events: none;
+  opacity: 0.85;
+}
+@media (max-width: 640px) {
+  #critters {
+    height: 68px;
+  }
+  .hero-scroll {
+    bottom: 78px;
+  }
+}
+
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -872,5 +897,8 @@ h3 {
   }
   .marquee-track {
     animation: none;
+  }
+  #critters {
+    display: none;
   }
 }
