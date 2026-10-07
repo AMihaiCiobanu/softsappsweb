@@ -68,6 +68,8 @@
       work_popasul_desc: "Site de prezentare pentru un restaurant tradițional din Bucovina. Design cald, rustic, optimizat pentru Google.",
       work_silvia_title: "Silvia Skin Studio",
       work_silvia_desc: "Site pentru un studio de beauty din Marea Britanie. React modern, animat, cu programări prin telefon.",
+      work_clemi_title: "Nails by Clemi",
+      work_clemi_desc: "Pagină de prezentare pentru un salon de unghii din Iași, cu servicii și program live și programare online direct în pagină, prin Appointments & Reports.",
       cta_visit: "Deschide site-ul",
       cta_learn: "Află mai multe",
 
@@ -321,6 +323,8 @@
       work_popasul_desc: "Presentation site for a traditional restaurant in Bucovina. Warm, rustic design, tuned for Google.",
       work_silvia_title: "Silvia Skin Studio",
       work_silvia_desc: "Website for a UK beauty studio. Modern animated React, bookings by phone.",
+      work_clemi_title: "Nails by Clemi",
+      work_clemi_desc: "Presentation page for a nail salon in Iași, with live services and opening hours and online booking right on the page, powered by Appointments & Reports.",
       cta_visit: "Open the site",
       cta_learn: "Learn more",
 
