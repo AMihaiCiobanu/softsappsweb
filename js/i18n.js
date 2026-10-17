@@ -269,6 +269,7 @@
 
       ist_privacy: "Politica de confidențialitate",
       ist_home: "Înapoi la SoftApps",
+      ist_shots_aria: "Capturi de ecran Istețel",
     },
 
     en: {
@@ -525,6 +526,7 @@
 
       ist_privacy: "Privacy policy",
       ist_home: "Back to SoftApps",
+      ist_shots_aria: "Istețel screenshots",
     },
   };
 

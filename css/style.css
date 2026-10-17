@@ -15,7 +15,7 @@
   --border-strong: rgba(255, 255, 255, 0.18);
   --text: #f4f7ff;
   --text-dim: #9aa4bf;
-  --text-faint: #626b86;
+  --text-faint: #7d86a1;
 
   --cyan: #22d3ee;
   --violet: #7c3aed;
@@ -648,6 +648,7 @@ h3 {
   right: -40px;
   bottom: -40px;
   width: 200px;
+  height: auto;
   opacity: 0.14;
   filter: blur(0.3px);
   transform: rotate(-8deg);
