@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="ist_meta_title">Istețel — Engleză & Matematică pentru copii | SoftApps</title>
+  <title data-i18n="ist_meta_title">Istețel — engleză și matematică pentru copii | SoftApps</title>
   <meta name="description" data-i18n-content="ist_meta_desc"
-    content="Istețel — aplicație educativă offline pentru copii. Engleză și matematică prin 284 de lecții scurte și 59 de tipuri de exerciții, cu lecții noi adăugate constant. Patru cursuri: română → engleză, engleză → română, doar română, doar engleză. Fără conturi, fără reclame, fără urmărire.">
+    content="Istețel: engleză și matematică pentru copii, în 284 de lecții scurte și 59 de tipuri de exerciții. Merge offline, fără conturi și fără reclame.">
   <meta name="theme-color" content="#05070f">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SoftApps">
   <meta property="og:locale" content="ro_RO">
   <meta property="og:locale:alternate" content="en_GB">
-  <meta property="og:title" content="Istețel — Engleză & Matematică pentru copii">
+  <meta property="og:title" content="Istețel — engleză și matematică pentru copii">
   <meta property="og:description"
-    content="Aplicație educativă offline pentru copii: 71 de teme, 284 de lecții, 59 de tipuri de exerciții. Fără conturi, fără reclame.">
+    content="Aplicație educativă offline pentru copii: 71 de capitole, 284 de lecții, 59 de tipuri de exerciții. Fără conturi, fără reclame.">
   <meta property="og:url" content="https://softsapps.com/istetel/">
   <meta property="og:image" content="https://softsapps.com/assets/istetel/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -83,7 +83,7 @@
         "name": "Cum se plătește?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O singură plată, la descărcare. Fără abonament, fără reclame și fără cumpărături în aplicație — tot conținutul e acolo de la instalare, pentru totdeauna. Prețul în moneda ta apare în App Store și Google Play."
+          "text": "O singură plată, la descărcare. Fără abonament, fără reclame și fără cumpărături în aplicație — tot conținutul e inclus. Prețul în moneda ta apare în App Store și Google Play."
         }
       },
       {
@@ -91,7 +91,7 @@
         "name": "Pentru ce vârstă e potrivită aplicația?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Aproximativ 4–11 ani. Primele teme merg pentru preșcolari care recunosc imagini, iar temele de la final (fracții, ordinea operațiilor, numere romane) acoperă clasele primare."
+          "text": "Aproximativ 4–11 ani. Primele capitole sunt potrivite pentru preșcolari care recunosc imagini, iar capitolele de la final (fracții, ordinea operațiilor, numere romane) acoperă clasele primare."
         }
       },
       {
@@ -107,7 +107,7 @@
         "name": "Ce date colectați?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Niciuna. Nu există conturi, nu există server, nu există analytics. Progresul rămâne pe telefon și dispare dacă dezinstalezi aplicația."
+          "text": "Niciuna. Nu există conturi, nu există server, nu există statistici de utilizare. Progresul rămâne pe telefon sau tabletă și dispare dacă dezinstalezi aplicația."
         }
       },
       {
@@ -115,7 +115,7 @@
         "name": "Ce limbi sunt disponibile?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Patru cursuri, schimbate oricând din Setări: română → engleză, engleză → română, doar română și doar engleză. Instrucțiunile apar în prima limbă, răspunsurile și pronunția în a doua."
+          "text": "Patru cursuri, le schimbi oricând din Setări: română → engleză, engleză → română, doar română și doar engleză. Instrucțiunile apar în prima limbă, răspunsurile și pronunția în a doua."
         }
       },
       {
@@ -123,7 +123,7 @@
         "name": "Se mai adaugă lecții?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Da. Adăugăm constant teme și lecții noi, atât la matematică, cât și la limba aleasă, prin actualizările din App Store și Google Play. Sunt incluse în plata inițială."
+          "text": "Da. Adăugăm periodic capitole și lecții noi, atât la matematică, cât și la limba aleasă, prin actualizările din App Store și Google Play. Sunt incluse în plata inițială."
         }
       },
       {
@@ -131,7 +131,7 @@
         "name": "Cum funcționează matematica adaptivă?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Aplicația reține separat cât de bine merge fiecare operație. Când copilul răspunde corect, numerele cresc; la greșeli, coboară. Antrenamentul mixt alege mai des operațiile la care are nevoie de exercițiu."
+          "text": "Aplicația urmărește separat cum se descurcă copilul la fiecare operație. Când răspunde corect, numerele cresc; la greșeli, scad. Antrenamentul mixt alege mai des operațiile la care are nevoie de exercițiu."
         }
       }
     ]
@@ -176,6 +176,7 @@
       font-size: clamp(2.3rem, 6.4vw, 4.6rem);
       max-width: 16ch;
       margin: 20px 0;
+      text-wrap: balance;
     }
 
     .ist-hero .hero-sub {
@@ -628,7 +629,7 @@
       </svg>
     </a>
     <div class="header-right">
-      <div class="lang-switch" role="group" aria-label="Language">
+      <div class="lang-switch" role="group" data-i18n-aria="lang_aria" aria-label="Limbă">
         <button data-lang="ro" type="button">RO</button>
         <button data-lang="en" type="button">EN</button>
       </div>
@@ -644,18 +645,16 @@
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="wrap hero-inner">
       <img class="ist-icon" src="/assets/portfolio/istetel-icon.png" alt="Istețel" width="256" height="256">
-      <span class="badge-live-pill" data-i18n="ist_badge">Live · App Store &amp; Google Play</span>
-      <h1 data-i18n-html="ist_title_html">Istețel — <span class="grad">învățare pentru copii</span></h1>
+      <span class="badge-live-pill" data-i18n="ist_badge">Disponibilă în App Store și Google Play</span>
+      <h1 data-i18n-html="ist_title_html">Istețel — <span class="grad">engleză și matematică pentru copii</span></h1>
       <p class="hero-sub" data-i18n="ist_sub">Engleză și matematică prin lecții scurte, ca un joc. Complet offline, fără
         conturi, fără reclame, fără urmărire.</p>
 
       <div class="courses">
         <p class="courses-label" data-i18n="ist_courses_label">Alegi cursul din aplicație, oricând:</p>
         <div class="courses-row">
-          <span class="course"><span class="course-flags">🇷🇴→🇬🇧</span><span data-i18n="ist_c1">Română →
-              Engleză</span></span>
-          <span class="course"><span class="course-flags">🇬🇧→🇷🇴</span><span data-i18n="ist_c2">Engleză →
-              Română</span></span>
+          <span class="course"><span class="course-flags">🇷🇴→🇬🇧</span><span data-i18n="ist_c1">Română → engleză</span></span>
+          <span class="course"><span class="course-flags">🇬🇧→🇷🇴</span><span data-i18n="ist_c2">Engleză → română</span></span>
           <span class="course"><span class="course-flags">🇷🇴</span><span data-i18n="ist_c3">Doar română</span></span>
           <span class="course"><span class="course-flags">🇬🇧</span><span data-i18n="ist_c4">Doar engleză</span></span>
         </div>
@@ -663,22 +662,22 @@
 
       <div class="ist-actions">
         <a class="store-badge" href="https://apps.apple.com/ro/app/iste%C8%9Bel-english-math/id6785068602"
-          target="_blank" rel="noopener" aria-label="Download on the App Store (opens in new tab)">
+          target="_blank" rel="noopener" data-i18n-aria="ist_store_apple_aria" aria-label="Descarcă din App Store (se deschide într-o filă nouă)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path
               d="M16.365 1.43c0 1.14-.417 2.2-1.11 3.02-.75.88-1.98 1.56-3.06 1.47-.13-1.1.42-2.28 1.12-3.05.77-.86 2.1-1.5 3.05-1.44zM20.79 17.2c-.55 1.27-.81 1.84-1.52 2.96-.99 1.57-2.39 3.52-4.12 3.53-1.54.02-1.93-.99-4.02-.98-2.08.01-2.52.99-4.06.97-1.73-.02-3.05-1.78-4.04-3.35C-.38 16.02-.65 10.6 1.6 7.75c.98-1.24 2.5-2.03 3.98-2.03 1.5 0 2.44 1 3.68 1 1.2 0 1.93-1 3.67-1 1.31 0 2.7.71 3.69 1.94-3.24 1.78-2.71 6.4.17 8.54z" />
           </svg>
-          <span><small>Download on the</small> App Store</span>
+          <span><small data-i18n="ist_store_apple_small">Descarcă din</small> App Store</span>
         </a>
         <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.softappsSRL.istetel"
-          target="_blank" rel="noopener" aria-label="Get it on Google Play (opens in new tab)">
+          target="_blank" rel="noopener" data-i18n-aria="ist_store_google_aria" aria-label="Descarcă de pe Google Play (se deschide într-o filă nouă)">
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
             <path fill="#00d4ff" d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L13 12.1v-.2L3.7 2.2z" />
             <path fill="#00f076" d="M16.2 15.3 13 12.1v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.7 0 2.3z" />
             <path fill="#ff3a44" d="M16.3 15.2 13 12 3.6 21.7c.4.4 1 .4 1.7.1z" />
             <path fill="#ffce00" d="M16.3 8.8 5.3 2.2c-.7-.4-1.3-.3-1.7.1L13 12z" />
           </svg>
-          <span><small>Get it on</small> Google Play</span>
+          <span><small data-i18n="ist_store_google_small">Descarcă de pe</small> Google Play</span>
         </a>
       </div>
 
@@ -689,7 +688,7 @@
         </div>
         <div class="ist-stat">
           <div class="n">71</div>
-          <div class="l" data-i18n="ist_s2">teme</div>
+          <div class="l" data-i18n="ist_s2">capitole</div>
         </div>
         <div class="ist-stat">
           <div class="n">284</div>
@@ -701,7 +700,7 @@
         </div>
         <div class="ist-stat">
           <div class="n">570+</div>
-          <div class="l" data-i18n="ist_s5">cuvinte cu audio</div>
+          <div class="l" data-i18n="ist_s5">cuvinte cu pronunție</div>
         </div>
       </div>
     </div>
@@ -712,14 +711,14 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow" data-i18n="ist_shots_eyebrow">Cum arată</span>
-        <h2 data-i18n-html="ist_shots_title_html">Lecții care <span class="grad">se joacă</span></h2>
-        <p data-i18n="ist_shots_sub">Aceleași lecții, în temă luminoasă sau întunecată — copilul alege.</p>
+        <h2 data-i18n-html="ist_shots_title_html">Lecții care <span class="grad">par joacă</span></h2>
+        <p data-i18n="ist_shots_sub">Aceleași lecții, cu temă luminoasă sau întunecată — copilul alege.</p>
       </div>
       <div class="shots reveal" tabindex="0" role="region" data-i18n-aria="ist_shots_aria" aria-label="Capturi de ecran Istețel">
         <figure class="shot">
-          <img src="/assets/istetel/shot-home-en.jpg" alt="Ecranul principal cu temele de engleză" loading="lazy"
+          <img src="/assets/istetel/shot-home-en.jpg" alt="Ecranul principal cu capitolele de engleză" loading="lazy"
             width="480" height="1066">
-          <figcaption data-i18n="ist_shot1">Teme de engleză, cu progresul pe zile</figcaption>
+          <figcaption data-i18n="ist_shot1">Capitole de engleză, cu progresul săptămânii</figcaption>
         </figure>
         <figure class="shot">
           <img src="/assets/istetel/shot-teach.jpg" alt="Cartonașe cu vehicule în română și engleză" loading="lazy"
@@ -753,7 +752,7 @@
         </figure>
         <figure class="shot">
           <img src="/assets/istetel/shot-math-topics.jpg"
-            alt="Temele de matematică: fracții, numere romane, ordinea operațiilor" loading="lazy" width="480"
+            alt="Capitolele de matematică: fracții, numere romane, ordinea operațiilor" loading="lazy" width="480"
             height="1043">
           <figcaption data-i18n="ist_shot8">De la numărat la ordinea operațiilor</figcaption>
         </figure>
@@ -766,8 +765,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow" data-i18n="ist_feats_eyebrow">De ce Istețel</span>
-        <h2 data-i18n-html="ist_feats_title_html">Făcut pentru copii, <span class="grad">liniștitor pentru
-            părinți</span></h2>
+        <h2 data-i18n-html="ist_feats_title_html">Copiii învață, <span class="grad">părinții stau liniștiți</span></h2>
       </div>
       <div class="ist-feats">
         <div class="svc reveal">
@@ -784,38 +782,34 @@
         </div>
         <div class="svc reveal">
           <div class="svc-ico">🌍</div>
-          <h3 data-i18n="ist_f3_title">Patru cursuri, schimbate oricând</h3>
+          <h3 data-i18n="ist_f3_title">Patru cursuri, le schimbi oricând</h3>
           <p data-i18n="ist_f3_desc">Română → engleză, engleză → română, doar română sau doar engleză. Instrucțiunile
             în limba copilului, răspunsurile și pronunția în limba învățată.</p>
         </div>
         <div class="svc reveal">
           <div class="svc-ico">🔊</div>
-          <h3 data-i18n="ist_f4_title">Pronunție la atingere</h3>
-          <p data-i18n="ist_f4_desc">Fiecare cuvânt se aude. Poți alege chiar și vocea, din cele instalate pe telefon.
-          </p>
+          <h3 data-i18n="ist_f4_title">Atinge și ascultă</h3>
+          <p data-i18n="ist_f4_desc">Fiecare cuvânt se aude. Poți alege chiar și vocea, din cele instalate pe telefon sau tabletă.</p>
         </div>
         <div class="svc reveal">
           <div class="svc-ico">🧠</div>
           <h3 data-i18n="ist_f5_title">Matematică adaptivă</h3>
-          <p data-i18n="ist_f5_desc">Numerele cresc când copilul răspunde corect și coboară când greșește — separat
-            pentru adunare, scădere, înmulțire și împărțire.</p>
+          <p data-i18n="ist_f5_desc">Numerele cresc când copilul răspunde corect și scad când greșește — separat pentru adunare, scădere, înmulțire și împărțire.</p>
         </div>
         <div class="svc reveal">
           <div class="svc-ico">♾️</div>
-          <h3 data-i18n="ist_f6_title">Antrenament fără sfârșit</h3>
-          <p data-i18n="ist_f6_desc">Un mod de exerciții care generează întrebări la nesfârșit, cu accent pe operațiile
-            mai slabe.</p>
+          <h3 data-i18n="ist_f6_title">Antrenament fără limită</h3>
+          <p data-i18n="ist_f6_desc">Exerciții generate la nesfârșit, mai ales la operațiile care îi ies mai greu.</p>
         </div>
         <div class="svc reveal">
           <div class="svc-ico">🔥</div>
-          <h3 data-i18n="ist_f7_title">Stele și serii zilnice</h3>
-          <p data-i18n="ist_f7_desc">Stele pentru fiecare lecție și o serie care crește dacă revine în fiecare zi. Fără
-            presiune, doar motivație.</p>
+          <h3 data-i18n="ist_f7_title">Stele și zile la rând</h3>
+          <p data-i18n="ist_f7_desc">Stele pentru fiecare lecție și o serie care crește dacă copilul revine în fiecare zi. Fără presiune, doar motivație.</p>
         </div>
         <div class="svc reveal">
           <div class="svc-ico">🌗</div>
           <h3 data-i18n="ist_f8_title">Temă luminoasă sau întunecată</h3>
-          <p data-i18n="ist_f8_desc">Urmează sistemul sau se fixează manual — util seara, înainte de culcare.</p>
+          <p data-i18n="ist_f8_desc">Urmează setarea telefonului sau o alegi tu — utilă seara, înainte de culcare.</p>
         </div>
       </div>
     </div>
@@ -826,7 +820,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow" data-i18n="ist_subj_eyebrow">Ce învață</span>
-        <h2 data-i18n-html="ist_subj_title_html">Două materii, <span class="grad">71 de teme</span></h2>
+        <h2 data-i18n-html="ist_subj_title_html">Două materii, <span class="grad">71 de capitole</span></h2>
         <p data-i18n="ist_subj_sub">Conținutul crește odată cu copilul: de la primele cuvinte și numărat, până la
           ordinea operațiilor.</p>
       </div>
@@ -835,9 +829,8 @@
           <div class="subj-head"><span class="ico">🔤</span>
             <h3 data-i18n="ist_subj_en_title">Engleză</h3>
           </div>
-          <p class="subj-meta" data-i18n="ist_subj_en_meta">33 de teme · 77 de lecții · peste 570 de cuvinte</p>
-          <p class="subj-lead" data-i18n="ist_subj_en_lead">Fiecare temă începe cu cartonașe bilingve, apoi trece la
-            exerciții: ascultare, ortografie, traducere, propoziții.</p>
+          <p class="subj-meta" data-i18n="ist_subj_en_meta">33 de capitole · 77 de lecții · peste 570 de cuvinte</p>
+          <p class="subj-lead" data-i18n="ist_subj_en_lead">Fiecare capitol începe cu cartonașe bilingve, apoi trece la exerciții: ascultare, ortografie, traducere, propoziții.</p>
           <div class="chips">
             <span class="chip" data-i18n="ist_t_alphabet">Alfabet</span>
             <span class="chip" data-i18n="ist_t_animals">Animale</span>
@@ -853,7 +846,7 @@
             <span class="chip" data-i18n="ist_t_vehicles">Vehicule</span>
             <span class="chip" data-i18n="ist_t_sports">Sporturi</span>
             <span class="chip" data-i18n="ist_t_toys">Jucării</span>
-            <span class="chip" data-i18n="ist_t_music">Muzică</span>
+            <span class="chip" data-i18n="ist_t_music">Muzica</span>
             <span class="chip" data-i18n="ist_t_nature">Natura</span>
             <span class="chip" data-i18n="ist_t_weather">Vremea</span>
             <span class="chip" data-i18n="ist_t_seasons">Anotimpuri</span>
@@ -862,7 +855,7 @@
             <span class="chip" data-i18n="ist_t_greetings">Salutări</span>
             <span class="chip" data-i18n="ist_t_verbs">Verbe</span>
             <span class="chip" data-i18n="ist_t_adjectives">Adjective</span>
-            <span class="chip" data-i18n="ist_t_opposites">Opuse</span>
+            <span class="chip" data-i18n="ist_t_opposites">Contrarii</span>
             <span class="chip" data-i18n="ist_t_space">Spațiu</span>
             <span class="chip chip-grad" data-i18n="ist_t_world">Țări și steaguri · 6 continente</span>
           </div>
@@ -871,24 +864,23 @@
           <div class="subj-head"><span class="ico">➕</span>
             <h3 data-i18n="ist_subj_ma_title">Matematică</h3>
           </div>
-          <p class="subj-meta" data-i18n="ist_subj_ma_meta">38 de teme · 207 lecții · 5 grupe de dificultate</p>
-          <p class="subj-lead" data-i18n="ist_subj_ma_lead">Temele sunt grupate în Bazele, Operații, Geometrie,
-            Măsurători și Provocări — se deblochează în ritmul copilului.</p>
+          <p class="subj-meta" data-i18n="ist_subj_ma_meta">38 de capitole · 207 lecții · 5 categorii</p>
+          <p class="subj-lead" data-i18n="ist_subj_ma_lead">Capitolele sunt grupate în Bazele, Operații, Geometrie, Măsurători și Provocări — se deblochează în ritmul copilului.</p>
           <div class="chips">
             <span class="chip chip-grad" data-i18n="ist_g_basics">Bazele</span>
-            <span class="chip" data-i18n="ist_t_counting">Numărat</span>
-            <span class="chip" data-i18n="ist_t_compare">Comparare</span>
-            <span class="chip" data-i18n="ist_t_numwords">Numere în cuvinte</span>
-            <span class="chip" data-i18n="ist_t_parity">Par și impar</span>
+            <span class="chip" data-i18n="ist_t_counting">Numărare</span>
+            <span class="chip" data-i18n="ist_t_compare">Compară</span>
+            <span class="chip" data-i18n="ist_t_numwords">Numere în litere</span>
+            <span class="chip" data-i18n="ist_t_parity">Pare și impare</span>
             <span class="chip" data-i18n="ist_t_rounding">Rotunjire</span>
-            <span class="chip" data-i18n="ist_t_place">Ordine și clase</span>
+            <span class="chip" data-i18n="ist_t_place">Zeci și unități</span>
             <span class="chip chip-grad" data-i18n="ist_g_ops">Operații</span>
             <span class="chip" data-i18n="ist_t_add">Adunare</span>
             <span class="chip" data-i18n="ist_t_sub">Scădere</span>
             <span class="chip" data-i18n="ist_t_mul">Înmulțire</span>
             <span class="chip" data-i18n="ist_t_tables">Tabla înmulțirii</span>
             <span class="chip" data-i18n="ist_t_div">Împărțire</span>
-            <span class="chip" data-i18n="ist_t_remainder">Rest</span>
+            <span class="chip" data-i18n="ist_t_remainder">Împărțire cu rest</span>
             <span class="chip chip-grad" data-i18n="ist_g_geo">Geometrie</span>
             <span class="chip" data-i18n="ist_t_shapes">Forme</span>
             <span class="chip" data-i18n="ist_t_solids">Corpuri geometrice</span>
@@ -897,9 +889,9 @@
             <span class="chip" data-i18n="ist_t_perimeter">Perimetru</span>
             <span class="chip" data-i18n="ist_t_area">Aria</span>
             <span class="chip chip-grad" data-i18n="ist_g_measure">Măsurători</span>
-            <span class="chip" data-i18n="ist_t_money">Bani și rest</span>
+            <span class="chip" data-i18n="ist_t_money">Bani</span>
             <span class="chip" data-i18n="ist_t_clock">Ceasul</span>
-            <span class="chip" data-i18n="ist_t_time">Timpul</span>
+            <span class="chip" data-i18n="ist_t_time">Timp</span>
             <span class="chip chip-grad" data-i18n="ist_g_challenges">Provocări</span>
             <span class="chip" data-i18n="ist_t_problems">Probleme</span>
             <span class="chip" data-i18n="ist_t_fractions">Fracții</span>
@@ -912,9 +904,8 @@
       <div class="updates reveal">
         <span class="ico">🆕</span>
         <div>
-          <h3 data-i18n="ist_upd_title">Lecții noi, constant</h3>
-          <p data-i18n="ist_upd_desc">Adăugăm teme și lecții noi la matematică și la limba aleasă, prin actualizări
-            obișnuite. Intră în plata inițială — nu se cumpără separat.</p>
+          <h3 data-i18n="ist_upd_title">Lecții noi, periodic</h3>
+          <p data-i18n="ist_upd_desc">Adăugăm periodic capitole și lecții noi la matematică și la limba aleasă, prin actualizări. Sunt incluse în plata inițială, nu se cumpără separat.</p>
         </div>
       </div>
     </div>
@@ -925,8 +916,7 @@
     <div class="wrap ex-wrap">
       <div class="section-head reveal">
         <span class="eyebrow" data-i18n="ist_ex_eyebrow">Varietate</span>
-        <h2 data-i18n-html="ist_ex_title_html">59 de tipuri de exerciții, <span class="grad">nu un singur quiz</span>
-        </h2>
+        <h2 data-i18n-html="ist_ex_title_html">59 de tipuri de exerciții, <span class="grad">nu același test repetat</span></h2>
         <p data-i18n="ist_ex_sub">Fiecare lecție amestecă mai multe tipuri, ca să nu devină rutină.</p>
       </div>
       <div class="chips reveal">
@@ -940,7 +930,7 @@
         <span class="chip" data-i18n="ist_e8">Careu de cuvinte</span>
         <span class="chip" data-i18n="ist_e9">Intrusul</span>
         <span class="chip" data-i18n="ist_e10">Construiește propoziția</span>
-        <span class="chip" data-i18n="ist_e11">Completează spațiul</span>
+        <span class="chip" data-i18n="ist_e11">Completează spațiul liber</span>
         <span class="chip" data-i18n="ist_e12">Traducere</span>
         <span class="chip" data-i18n="ist_e13">Adevărat sau fals</span>
         <span class="chip" data-i18n="ist_e14">Sortare pe categorii</span>
@@ -968,14 +958,11 @@
       <div class="faq reveal">
         <details>
           <summary data-i18n="ist_q1">Cum se plătește?</summary>
-          <p data-i18n="ist_a1">O singură plată, la descărcare. Fără abonament, fără reclame și fără cumpărături în
-            aplicație — tot conținutul e acolo de la instalare, pentru totdeauna. Prețul în moneda ta apare în App Store
-            și Google Play.</p>
+          <p data-i18n="ist_a1">O singură plată, la descărcare. Fără abonament, fără reclame și fără cumpărături în aplicație — tot conținutul e inclus. Prețul în moneda ta apare în App Store și Google Play.</p>
         </details>
         <details>
           <summary data-i18n="ist_q2">Pentru ce vârstă e potrivită aplicația?</summary>
-          <p data-i18n="ist_a2">Aproximativ 4–11 ani. Primele teme merg pentru preșcolari care recunosc imagini, iar
-            temele de la final (fracții, ordinea operațiilor, numere romane) acoperă clasele primare.</p>
+          <p data-i18n="ist_a2">Aproximativ 4–11 ani. Primele capitole sunt potrivite pentru preșcolari care recunosc imagini, iar capitolele de la final (fracții, ordinea operațiilor, numere romane) acoperă clasele primare.</p>
         </details>
         <details>
           <summary data-i18n="ist_q3">Are nevoie de internet?</summary>
@@ -984,25 +971,19 @@
         </details>
         <details>
           <summary data-i18n="ist_q4">Ce date colectați?</summary>
-          <p data-i18n="ist_a4">Niciuna. Nu există conturi, nu există server, nu există analytics. Progresul rămâne pe
-            telefon și dispare dacă dezinstalezi aplicația.</p>
+          <p data-i18n="ist_a4">Niciuna. Nu există conturi, nu există server, nu există statistici de utilizare. Progresul rămâne pe telefon sau tabletă și dispare dacă dezinstalezi aplicația.</p>
         </details>
         <details>
           <summary data-i18n="ist_q5">Ce limbi sunt disponibile?</summary>
-          <p data-i18n="ist_a5">Patru cursuri, schimbate oricând din Setări: română → engleză, engleză → română, doar
-            română și doar engleză. Instrucțiunile apar în prima limbă, răspunsurile și pronunția în a doua.</p>
+          <p data-i18n="ist_a5">Patru cursuri, le schimbi oricând din Setări: română → engleză, engleză → română, doar română și doar engleză. Instrucțiunile apar în prima limbă, răspunsurile și pronunția în a doua.</p>
         </details>
         <details>
           <summary data-i18n="ist_q7">Se mai adaugă lecții?</summary>
-          <p data-i18n="ist_a7">Da. Adăugăm constant teme și lecții noi, atât la matematică, cât și la limba aleasă,
-            prin
-            actualizările din App Store și Google Play. Sunt incluse în plata inițială.</p>
+          <p data-i18n="ist_a7">Da. Adăugăm periodic capitole și lecții noi, atât la matematică, cât și la limba aleasă, prin actualizările din App Store și Google Play. Sunt incluse în plata inițială.</p>
         </details>
         <details>
           <summary data-i18n="ist_q6">Cum funcționează matematica adaptivă?</summary>
-          <p data-i18n="ist_a6">Aplicația reține separat cât de bine merge fiecare operație. Când copilul răspunde
-            corect, numerele cresc; la greșeli, coboară. Antrenamentul mixt alege mai des operațiile la care are nevoie
-            de exercițiu.</p>
+          <p data-i18n="ist_a6">Aplicația urmărește separat cum se descurcă copilul la fiecare operație. Când răspunde corect, numerele cresc; la greșeli, scad. Antrenamentul mixt alege mai des operațiile la care are nevoie de exercițiu.</p>
         </details>
       </div>
     </div>
@@ -1017,22 +998,22 @@
         </p>
         <div class="ist-actions">
           <a class="store-badge" href="https://apps.apple.com/ro/app/iste%C8%9Bel-english-math/id6785068602"
-            target="_blank" rel="noopener" aria-label="Download on the App Store (opens in new tab)">
+            target="_blank" rel="noopener" data-i18n-aria="ist_store_apple_aria" aria-label="Descarcă din App Store (se deschide într-o filă nouă)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M16.365 1.43c0 1.14-.417 2.2-1.11 3.02-.75.88-1.98 1.56-3.06 1.47-.13-1.1.42-2.28 1.12-3.05.77-.86 2.1-1.5 3.05-1.44zM20.79 17.2c-.55 1.27-.81 1.84-1.52 2.96-.99 1.57-2.39 3.52-4.12 3.53-1.54.02-1.93-.99-4.02-.98-2.08.01-2.52.99-4.06.97-1.73-.02-3.05-1.78-4.04-3.35C-.38 16.02-.65 10.6 1.6 7.75c.98-1.24 2.5-2.03 3.98-2.03 1.5 0 2.44 1 3.68 1 1.2 0 1.93-1 3.67-1 1.31 0 2.7.71 3.69 1.94-3.24 1.78-2.71 6.4.17 8.54z" />
             </svg>
-            <span><small>Download on the</small> App Store</span>
+            <span><small data-i18n="ist_store_apple_small">Descarcă din</small> App Store</span>
           </a>
           <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.softappsSRL.istetel"
-            target="_blank" rel="noopener" aria-label="Get it on Google Play (opens in new tab)">
+            target="_blank" rel="noopener" data-i18n-aria="ist_store_google_aria" aria-label="Descarcă de pe Google Play (se deschide într-o filă nouă)">
             <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="#00d4ff" d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L13 12.1v-.2L3.7 2.2z" />
               <path fill="#00f076" d="M16.2 15.3 13 12.1v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.7 0 2.3z" />
               <path fill="#ff3a44" d="M16.3 15.2 13 12 3.6 21.7c.4.4 1 .4 1.7.1z" />
               <path fill="#ffce00" d="M16.3 8.8 5.3 2.2c-.7-.4-1.3-.3-1.7.1L13 12z" />
             </svg>
-            <span><small>Get it on</small> Google Play</span>
+            <span><small data-i18n="ist_store_google_small">Descarcă de pe</small> Google Play</span>
           </a>
         </div>
       </div>
@@ -1053,8 +1034,7 @@
               fill="#f4f7ff">Soft<tspan fill="url(#lg)">Apps</tspan></text>
           </svg>
         </a>
-        <p style="color:var(--text-faint);margin:12px 0 0;font-size:.95rem" data-i18n="footer_tagline">Aplicații native
-          & experiențe web.</p>
+        <p style="color:var(--text-faint);margin:12px 0 0;font-size:.95rem" data-i18n="footer_tagline">Aplicații native și site-uri web.</p>
       </div>
       <div class="footer-meta">
         <div><a href="/istetel/privacy-policy.html" data-i18n="ist_privacy">Politica de confidențialitate</a></div>
