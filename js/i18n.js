@@ -40,7 +40,7 @@
 
       // about
       about_eyebrow: "Cine suntem",
-      about_title_html: "Un studio de software cu produse pe care <span class='grad'>oamenii le folosesc</span>.",
+      about_title_html: "Facem software pe care <span class='grad'>oamenii chiar îl folosesc</span>.",
       about_p1: "SoftApps SRL construiește aplicații mobile native și pagini web de prezentare. Punem accent pe viteză, design curat și aplicații care merg și fără internet.",
       about_p2: "Avem produse proprii în App Store și Google Play și am făcut site-uri pentru clienți reali — de la restaurante la studiouri de beauty.",
       stat_apps_n: "2",
