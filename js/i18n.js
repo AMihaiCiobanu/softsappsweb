@@ -40,7 +40,7 @@
 
       // about
       about_eyebrow: "Cine suntem",
-      about_title_html: "Studio de software, produse pe care le <span class='grad'>folosește lumea</span>.",
+      about_title_html: "Un studio de software cu produse pe care <span class='grad'>oamenii le folosesc</span>.",
       about_p1: "SoftApps SRL construiește aplicații mobile native și pagini web de prezentare. Punem accent pe viteză, design curat și lucruri care funcționează chiar și offline.",
       about_p2: "Avem produse proprii în magazinele de aplicații și site-uri livrate pentru clienți reali — de la restaurante la studiouri de beauty.",
       stat_apps_n: "2",
@@ -80,8 +80,8 @@
       // services
       services_eyebrow: "Ce oferim",
       services_title_html: "Servicii de la <span class='grad'>cap la coadă</span>",
-      svc_mobile_title: "Aplicații mobile native",
-      svc_mobile_desc: "iOS și Android din aceeași bază de cod, cu Flutter. Publicare în App Store și Google Play.",
+      svc_mobile_title: "Aplicații mobile",
+      svc_mobile_desc: "iOS și Android, native sau cu Flutter, după proiect. Publicare în App Store și Google Play.",
       svc_web_title: "Site-uri web",
       svc_web_desc: "Pagini de prezentare rapide și moderne, optimizate SEO, găzduite pe infrastructură globală.",
       svc_design_title: "Design & UI/UX",
@@ -251,7 +251,7 @@
       ist_faq_title_html: "Întrebări <span class='grad'>frecvente</span>",
       ist_q1: "Cum se plătește?",
       ist_a1: "O singură plată, la descărcare. Fără abonament, fără reclame și fără cumpărături în aplicație — tot conținutul e acolo de la instalare, pentru totdeauna. Prețul în moneda ta apare în App Store și Google Play.",
-      ist_q2: "Ce vârstă are copilul potrivit?",
+      ist_q2: "Pentru ce vârstă e potrivită aplicația?",
       ist_a2: "Aproximativ 4–11 ani. Primele teme merg pentru preșcolari care recunosc imagini, iar temele de la final (fracții, ordinea operațiilor, numere romane) acoperă clasele primare.",
       ist_q3: "Are nevoie de internet?",
       ist_a3: "Nu. Lecțiile, imaginile și sunetele sunt incluse în aplicație. După instalare merge complet offline.",
@@ -301,7 +301,7 @@
       marquee: "iOS · Android · Flutter · Web · UI/UX · Cloudflare · Offline-first · App Store · Google Play ·",
 
       about_eyebrow: "Who we are",
-      about_title_html: "A software studio, products <span class='grad'>people actually use</span>.",
+      about_title_html: "A software studio whose products <span class='grad'>people actually use</span>.",
       about_p1: "SoftApps Ltd builds native mobile apps and presentation websites. We care about speed, clean design, and things that work even offline.",
       about_p2: "We ship our own products to the app stores and deliver websites for real clients — from restaurants to beauty studios.",
       stat_apps_n: "2",
@@ -339,8 +339,8 @@
 
       services_eyebrow: "What we offer",
       services_title_html: "End-to-end <span class='grad'>services</span>",
-      svc_mobile_title: "Native mobile apps",
-      svc_mobile_desc: "iOS and Android from one codebase with Flutter. Shipped to the App Store and Google Play.",
+      svc_mobile_title: "Mobile apps",
+      svc_mobile_desc: "iOS and Android, native or with Flutter, depending on the project. Shipped to the App Store and Google Play.",
       svc_web_title: "Websites",
       svc_web_desc: "Fast, modern presentation pages, SEO-tuned, hosted on global infrastructure.",
       svc_design_title: "Design & UI/UX",
